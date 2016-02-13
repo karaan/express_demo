@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+    <head>
+    <meta charset ="UTF-8">
+    <title> My app </title>
+    <link rel="stylesheet" href="bootstrap/dist/css/bootstrap.css">
+
+
+    </head>
+    <body>
+    <div class "container">
+<h1><%= title %></h1>
+    
+    <link rel="stylesheet" href="bower_components/bootstrap/css/bootstrap.css">
+    <ul>
+    <% for (var i = 0; i < items.length; i++) { %>
+        <li><%= items[i].desc %></li>
+        <% } %>
+        </ul>
+
+<form action="/add" method ="post">
+    <input type ="text" name="newItem">
+           <input type ="submit">
+
+    </form>
+    <div>
+
+<script src= "bootstrap/dist/js/bootstrap.js"> </script>
+<script src= "jquery/dist/jquery.js"> </script>
+
+</body>
+</html>
