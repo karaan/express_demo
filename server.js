@@ -8,38 +8,29 @@ var app = express();
 app.set ('view engine', 'ejs');
 app.set('views', path.join(__dirname, 'views'));
 
+
+
 //use middleware
 
 app.use(bodyParser());
 
 app.use(express.static(path.join(__dirname, 'bower_components')));
+app.use(express.static(path.join(__dirname, 'views')));
+
 //define routes
 
-var todoItems = [
-    
-            {id: 1, desc: 'foo'},
-            {id: 2, desc: 'bar'},
-            {id: 3, desc: 'baz'}
-];
+
     
 app.get('/' , function (req, res) {
     //load data fromDB here 
+   
     res.render('index', { 
         title: 'Myapp',
-        items: todoItems
+       
      });         
 });
 
-app.post('/add', function(req, res) {
-    var newItem = req.body.newItem;
-   
-    todoItems.push({
-    id: todoItems.length + 1,
-    desc: newItem
-    });
-    
-    res.redirect('/');
-});
+
         
         
 app.listen (1337, function () {
