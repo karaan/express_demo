@@ -10,7 +10,7 @@ app.set('views', path.join(__dirname, 'views'));
 
 
 
-//use middleware
+///use middleware
 
 app.use(bodyParser());
 
